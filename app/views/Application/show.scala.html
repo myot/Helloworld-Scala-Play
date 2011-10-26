@@ -1,0 +1,25 @@
+@(
+	post:(models.Post,models.User,Seq[models.Comment]),
+	pagination:(Option[models.Post],Option[models.Post])
+)
+ 
+@main(title = post._1.title) {
+    <ul id="pagination">
+        @pagination._1.map { post =>
+            <li id="previous">
+                <a href="@action(controllers.Application.show(post.id()))">
+                    @post.title
+                </a>
+            </li>
+        }
+        @pagination._2.map { post =>
+            <li id="next">
+                <a href="@action(controllers.Application.show(post.id()))">
+                    @post.title
+                </a>
+            </li>
+        }
+    </ul>
+    @display(post, mode = "full")
+    
+}

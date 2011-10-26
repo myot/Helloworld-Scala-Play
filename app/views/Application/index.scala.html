@@ -1,14 +1,27 @@
-@()(implicit flash:play.mvc.Scope.Flash)
-
-@if(flash.get("error")) {
-    <p style="color:#c00">
-        @flash.get("error")
-    </p>
-}
-
+@(
+    front:Option[(models.Post,models.User,Seq[models.Comment])], 
+    older:Seq[(models.Post,models.User,Seq[models.Comment])]
+)
+ 
 @main(title = "Home") {
-    <form action="@action(controllers.Application.sayHello)" method="GET">
-        <input type="text" name="myName" /> 
-        <input type="submit" value="Say hello!" />
-    </form>
+    
+    @front.map { front =>
+ 		
+ 		@display(front, mode="home")
+ 		
+        @Option(older).filterNot(_.isEmpty).map { posts =>
+ 
+            <div class="older-posts">    
+                <h3>Older posts <span class="from">from this blog</span></h3>
+ 
+                @posts.map { post =>
+                    @display(post, mode="teaser")
+                }
+            </div> 
+        }
+    }.getOrElse {
+        <div class="empty">
+            There is currently nothing to read here.
+        </div>
+    }
 }
