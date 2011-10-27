@@ -1,10 +1,30 @@
-Scala & Play Framework playground.
+Scala & Play Framework playground
+
+Very very similar to RubyOnRails but for Java (and Scala).  Here is my sample code to play around with play.
+
+Steps to run:
+
+1. Download PlayFramework: http://www.playframework.org/
+2. Extract to desire location and put it on your path
+3. Let Play install Scala module for you, from command line: "play install scala-0.9.1"
+4. Clone this project (or download) and from command line: "play run"
+5. Browse to http://localhost:9000 and enjoy.
 
 
-http://www.playframework.org/
+4.1 To run unit test, start the test instead of regular run: "play test"
+5.1 Browse to http://localhost:9000/@tests
+
+Play Framework Links:
+http://scala.playframework.org//
 http://scala.playframework.org/documentation/scala-0.9.1/guide1
 
+Scala Links:
 http://www.scala-lang.org/docu/files/ScalaTutorial.pdf
 A Tour of Scala http://www.scala-lang.org/node/104
 http://www.scala-ide.org/ Since 2.0 a very good IDE
 http://codemonkeyism.com/top-5-things-to-know-about-constructors-in-scala/
+
+Some thoughts:
+
+1. Very much tied to "Anorm", SQL data access with Play.  Can we use others like Hibernate??
+2. Scala Templates (http://scala.playframework.org/documentation/scala-0.9.1/templates) proprietary templating design

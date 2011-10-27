@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<testsuite failures="0" time="0.234" errors="0" skipped="0" tests="7" name="BasicTests">
-  <testcase classname="BasicTests" name="should run this dumb test" time="0.001">
+<testsuite failures="0" time="0.247" errors="0" skipped="0" tests="7" name="BasicTests">
+  <testcase classname="BasicTests" name="should run this dumb test" time="0.005">
       </testcase>
-  <testcase classname="BasicTests" name="should create and retrieve a User" time="0.033">
+  <testcase classname="BasicTests" name="should create and retrieve a User" time="0.027">
       </testcase>
-  <testcase classname="BasicTests" name="should connect a User" time="0.013">
+  <testcase classname="BasicTests" name="should connect a User" time="0.019">
       </testcase>
-  <testcase classname="BasicTests" name="should create a Post" time="0.017">
+  <testcase classname="BasicTests" name="should create a Post" time="0.022">
       </testcase>
-  <testcase classname="BasicTests" name="should retrieve Posts with author" time="0.01">
+  <testcase classname="BasicTests" name="should retrieve Posts with author" time="0.025">
       </testcase>
-  <testcase classname="BasicTests" name="should support Comments" time="0.036">
+  <testcase classname="BasicTests" name="should support Comments" time="0.048">
       </testcase>
-  <testcase classname="BasicTests" name="should load a complex graph from Yaml" time="0.124">
+  <testcase classname="BasicTests" name="should load a complex graph from Yaml" time="0.101">
       </testcase>
 </testsuite>

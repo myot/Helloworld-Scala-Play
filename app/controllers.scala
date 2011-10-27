@@ -3,6 +3,7 @@ package controllers
 import play._
 import play.mvc._
 import models._
+import play.data.validation._
 
 object Application extends Controller {
     
@@ -31,6 +32,20 @@ object Application extends Controller {
 	        html.show(post, post._1.prevNext)
 	    } getOrElse {
 	        NotFound("No such Post")
+	    }
+	}
+    
+    def postComment(postId:Long) = {
+	    val author = params.get("author")
+	    val content = params.get("content")
+	    Validation.required("author", author)
+	    Validation.required("content", content)
+	    if(Validation.hasErrors) {
+	        show(postId)
+	    } else {
+	        Comment.create(Comment(postId, author, content))
+	        flash += "success" -> ("Thanks for posting " + author)
+	        Action(show(postId))
 	    }
 	}
 }
